@@ -80,4 +80,6 @@ A=np.loadtxt("EtudeEmbeddings/gdn_common_sorted_Uberfiltered.txt", usecols=range
 
 # Liste des papiers à lire 
 
+**TODO 15 Novembre** : 10mn de présentation + 10 mn de questions. 
+
 [Exposés Atal](https://lite.framacalc.org/papiersalire)
