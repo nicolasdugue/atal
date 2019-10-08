@@ -44,9 +44,9 @@ Exemple :
 ```
 Sur le corpus du grand débat, le vecteur d'embedding le plus similaire selon la similarité cosinus du vecteur d'embedding du nom *gilet* est le vecteur de l'adjectif *jaune*.
 
-**Faire quelques tests de similarité avec des exemples **
+**Faire quelques tests de similarité avec des exemples**
 
-Essayer également en utilisant des opérations d'addition et de soustraction : 
+**Essayer également en utilisant des opérations d'addition et de soustraction :**
 ```
 >>> wv_from_text.most_similar(positive=['lion_n'], negative=['chat_n'])
 [('ravager_v', 0.4405561089515686), ('exterminer_v', 0.4333677589893341), ('occident_n', 0.42082324624061584), ('calotte_n', 0.41908228397369385), ('prolétariat_n', 0.41813957691192627), ('pangolin_n', 0.4122292697429657), ('patauger_v', 0.4081956744194031), ('entrailles_n', 0.40781670808792114), ('météorite_n', 0.40622982382774353), ('égocentrisme_n', 0.4057267904281616)]
