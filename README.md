@@ -9,11 +9,14 @@ On considère deux corpus :
 Sur ces deux corpus, nous avons appris des word embeddings avec Skip-gram with Negative sampling. Ces embeddings sont de dimension 700, et ils ont été appris sur les versions lemmatisées de ces corpus, on trouve donc le lemme du mot ajouté à la fin du mot :
 \_adv pour adverbe,\_v pour verbe, \_n pour nom, \_a pour adjectif. Par exemple, le nom *filet* est représenté par *gilet_n*.
 
-Pour ce TD, nous fournissons trois fichiers d'embeddings pour chacun des corpus :
+Pour ce TD, nous fournissons trois fichiers d'embeddings pour chacun des corpus...
+
+**Pour frWac**
 - [frWac complet](frwac_common_sorted.zip)
 - [frWac très filtré](frwac_common_sorted_Uberfiltered.txt)
 - [frWac peu filtré](frwac_common_sorted_filtered.txt)
 
+Pour **gdn**
 - [gdn complet](gdn_common_sorted.zip)
 - [gdn très filtré](gdn_common_sorted_Uberfiltered.txt)
 - [gdn peu filtré](gdn_common_sorted_filtered.txt)
