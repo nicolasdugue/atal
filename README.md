@@ -69,7 +69,7 @@ Ensuite, on peut ainsi comparer les matrices [Sigma * A] et [B] : si les deux es
 A=np.loadtxt("EtudeEmbeddings/gdn_common_sorted_Uberfiltered.txt", usecols=range(1,701))
 ```
 
-2. En utilisant *svd* de scipy.linalg et *transpose* de numpy, réaliser l'alignement procruste.
+2. En utilisant *orthogonal_procrustes* de scipy.linalg, réaliser l'alignement procruste.
 
 3. Calculer les distance entre [Sigma * A] et [B] en utilisant la fonction cosine de *scipy.spatial.distance*. Faire le plot d'un histogramme.
 
