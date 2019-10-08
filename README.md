@@ -76,3 +76,8 @@ A=np.loadtxt("EtudeEmbeddings/gdn_common_sorted_Uberfiltered.txt", usecols=range
 4. Maintenant, charger *gdn_common_sorted_filtered.txt* dans A et *frwac_common_sorted_filtered.txt* dans B puis comparer à nouveau [Sigma * A] et [B] en conservant le Sigma déjà appris. Qu'observe-t-on ?
 
 5. Afficher les mots qui ont été les plus mal alignés. L'hypothèse est que ces mots sont les mots dont le sens a le plus changé dans les deux corpus.
+
+
+# Liste des papiers à lire 
+
+[Exposés Atal](https://lite.framacalc.org/papiersalire)
