@@ -17,7 +17,8 @@ Pour la mise en oeuvre des étapes 5 et 6, vous pouvez utiliser networkx (*impor
 - *nx.from_numpy_array* permet de créer le graphe à partir de la matrice de similarité ;
 - *nx.pageranl* permet de faire tourner l'algorithme du Pagerank.
 
-Testez votre approche sur n'importe quel document et comparez là avec par exemple *gensim.summarization.summarizer*. Pour comparer deux résumés, vous pouvez considérer la métrique *Rouge* qui sera présentée lors des exposés étudiants le 15 novembre : https://pypi.org/project/rouge/
+Testez votre approche sur n'importe quel document et comparez là avec par exemple *gensim.summarization.summarizer*. Vous pouvez également tenter de résumer une publication scientifique, et comparer votre résumé avec *l'abstract* humain qui en est le résumé produit par les auteurs. Pour comparer deux résumés, vous pouvez considérer la métrique *Rouge* qui sera présentée lors des exposés étudiants le 15 novembre : https://pypi.org/project/rouge/
+
 
 **[Mihalcea et Tarau]** Mihalcea, R., & Tarau, P. (2004). Textrank: Bringing order into text. In Proceedings of the 2004 conference on empirical methods in natural language processing (pp. 404-411).
 
