@@ -1,4 +1,29 @@
-# TD word embeddings
+# TD - Word embeddings pour le résumé automatique
+
+L'approche *Textrank* pour le résumé automatique est une baseline très efficace et très communément utilisée **[Mihalcea et Tarau]**. L'approche *Textrank* est une approche de résumé automatique dite **extractive** : il s'agit de résumer un document via **l'extraction** de phrases considérées comme caractéristiques du contenu du document. *Textrank* permet également d'extraire des mots-clés pour un document afin de l'indexer, mais nous concentrerons ici sur l'approche de résumé automatique.
+ 
+Cette approche est basée sur l'algorithme du *Pagerank*, l'algorithme qui a notamment rendu célèbre le moteur de recherche Google **[Brin et Page]**. Cet algorithme s'applique sur un graphe, et la construction du graphe est donc l'une des premières étapes de l'approche *Textrank* que nous détaillons ci-après : 
+1. Séparation du document en phrases ;
+2. Nettoyage des phrases ;
+3. **-** Représentation vectorielle des phrases avec **word2vec**
+4. Calcul de la similarité cosine de chacune des paires de phrases : matrice de similarité ;
+5. Création d'un graphe valuée en utilisant la matrice de similarité ;
+6. Run de l'algorithme du Pagerank ;
+7. Ranking des phrases dans l'ordre décroissant du score de Pagerank.
+
+Dans l'algorithme original de *Textrank*, les étapes 3 et 4 n'utilisent pas d'approches de plongements lexicaux (word embeddings). Nous proposons donc l'implémentation d'une approche originale de *Textrank* exploitant les plongements lexicaux. Pour cela, vous pouvez utiliser des *embeddings* pré-appris : https://code.google.com/archive/p/word2vec/.
+
+Pour la mise en oeuvre des étapes 5 et 6, vous pouvez utiliser networkx (*import networkx as nx*), une librairie Python pour manipuler des graphes très complète et très haut niveau :
+- *nx.from_numpy_array* permet de créer le graphe à partir de la matrice de similarité ;
+- *nx.pageranl* permet de faire tourner l'algorithme du Pagerank.
+
+Testez votre approche sur n'importe quel document et comparez là avec par exemple *gensim.summarization.summarizer*. Pour comparer deux résumés, vous pouvez considérer la métrique *Rouge* qui sera présentée lors des exposés étudiants le 15 novembre : https://pypi.org/project/rouge/
+
+**[Mihalcea et Tarau]** Mihalcea, R., & Tarau, P. (2004). Textrank: Bringing order into text. In Proceedings of the 2004 conference on empirical methods in natural language processing (pp. 404-411).
+
+**[Brin et Page]** Brin, S., & Page, L. (1998). The anatomy of a large-scale hypertextual web search engine. Computer networks and ISDN systems, 30(1-7), 107-117.
+
+# TD - Word embeddings : Procruste 
 
 ## Les fichiers
 
