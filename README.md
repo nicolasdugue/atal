@@ -11,7 +11,7 @@ Cette approche est basée sur l'algorithme du *Pagerank*, l'algorithme qui a not
 6. Run de l'algorithme du Pagerank ;
 7. Ranking des phrases dans l'ordre décroissant du score de Pagerank.
 
-Dans l'algorithme original de *Textrank*, les étapes 3 et 4 n'utilisent pas d'approches de plongements lexicaux (word embeddings). Nous proposons donc l'implémentation d'une approche originale de *Textrank* exploitant les plongements lexicaux. Pour cela, vous pouvez utiliser des *embeddings* pré-appris : https://code.google.com/archive/p/word2vec/.
+Dans l'algorithme original de *Textrank*, les étapes 3 et 4 n'utilisent pas d'approches de plongements lexicaux (word embeddings). Nous proposons donc l'implémentation d'une approche originale de *Textrank* exploitant les plongements lexicaux. Pour cela, vous pouvez utiliser des *embeddings* pré-appris : http://vectors.nlpl.eu/repository/.
 
 Pour la mise en oeuvre des étapes 5 et 6, vous pouvez utiliser networkx (*import networkx as nx*), une librairie Python pour manipuler des graphes très complète et très haut niveau :
 - *nx.from_numpy_array* permet de créer le graphe à partir de la matrice de similarité ;
