@@ -92,7 +92,7 @@ Ensuite, on peut ainsi comparer les matrices [Sigma * A] et [B] : si les deux es
 
 1. Avec numpy, utiliser loadtxt pour charger les matrices *gdn_common_sorted_Uberfiltered.txt* dans A et *frwac_common_sorted_Uberfiltered.txt* dans B.
 ```
-A=np.loadtxt("EtudeEmbeddings/gdn_common_sorted_Uberfiltered.txt", usecols=range(1,701))
+A=np.loadtxt("EtudeEmbeddings/gdn_common_sorted_Uberfiltered.txt", skiprows=1, usecols=range(1,701))
 ```
 
 2. En utilisant *orthogonal_procrustes* de scipy.linalg, réaliser l'alignement procruste.
