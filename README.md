@@ -7,6 +7,7 @@ Pour commencer à jouer avec des embeddings, le plus simple consiste à utiliser
 ### Comment les utiliser ?
 
 Si vous ne l'avez pas fait, installer gensim avec `pip install --user gensim`
+
 Ensuite  : 
 ```
 from gensim.models import KeyedVectors
@@ -47,7 +48,7 @@ Cette approche est basée sur l'algorithme du *Pagerank*, l'algorithme qui a not
 6. Run de l'algorithme du Pagerank (`networkx.pagerank`);
 7. Ranking des phrases dans l'ordre décroissant du score de Pagerank.
 
-Dans l'algorithme original de *Textrank*, les étapes 3 et 4 n'utilisent pas d'approches de plongements lexicaux (word embeddings). Nous proposons donc l'implémentation d'une approche originale de *Textrank* exploitant les plongements lexicaux. Pour cela, vous pouvez utiliser des *embeddings* pré-appris : http://vectors.nlpl.eu/repository/.
+Dans l'algorithme original de *Textrank*, les étapes 3 et 4 n'utilisent pas d'approches de plongements lexicaux (word embeddings). Nous proposons donc l'implémentation d'une approche originale de *Textrank* exploitant les plongements lexicaux. 
 
 Testez votre approche sur n'importe quel document et comparez là avec *gensim.summarization.summarizer*. 
 Vous pouvez également tenter de résumer une publication scientifique, et comparer votre résumé avec *l'abstract* humain qui en est le résumé produit par les auteurs. Pour comparer deux résumés, vous pouvez considérer la métrique *Rouge* : https://pypi.org/project/rouge/
