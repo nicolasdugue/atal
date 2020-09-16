@@ -29,7 +29,7 @@ C'est le cas :
 Imaginez d'autres analogies, formulez les, et postez les sur le mattermost si le résultat est cool.
 
 
-## L'approche TextRank
+## L'approche TextRank pour le résumé automatique
 
 Pour ce travail, vous avez besoin de : 
 - scipy, numpy
