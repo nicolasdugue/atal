@@ -1,3 +1,75 @@
+# TD - Clustering des données IRIS
+
+## Ce qu'il vous faut 
+
+- sklearn
+- matplotlib
+- seaborn
+- pandas
+- numpy
+
+## Les données
+
+Pour charger les données Iris, *sklearn* propose une fonction *sklearn.datasets.load_iris*. Cela retourne un dictionnaire que vous pouvez interroger en utilisant *.keys()* sur l'objet retourné.
+
+Ensuite, l'idéal est de charger les données *X* dans *pandas*, comme par exemple : 
+ ```
+ X=load_iris().data
+ pdX = pd.DataFrame(X)
+ pdX.columns=load_iris().feature_names
+ pdX.head()
+ ```
+Créer un autre dataframe pour les classes *y* (load_iris().target).
+Puis, en utilisant la fonction *concat* de pandas, fusionner les deux dataframes en un seul.
+
+## Stats et corrélations sur les données
+
+Il est possible d'appeler *describe* sur un dataframe pandas pour obtenir des statistiques descriptives simples sur chacun des attributs/variables/features utilisés pour décrire les données.
+
+Nous allons ensuite étudier les corrélations entre nos variables entre elles, mais également entre nos variables et la classe de nos données. Pour faire cela proprement, il s'agit de transformer notre colonne classe représentée par une variable discrète à valeurs dans {0, 1, 2} en trois colonnes booléennes indiquant pour chacune l'appartenance à la classe ou non.
+```
+df_bool = df.copy(deep=True)
+for i in range(df.classe.min(), df.classe.max() +1):
+    df_bool[data.target_names[i]]= (df.classe == i)
+del df_bool['classe']
+df_bool.head()
+```
+
+Ensuite on peut appeler *corr* sur le dataframe ainsi créé pour obtenir les résultats et utiliser la fonctionnalité *heatmap* de seaborn pour visualiser ces corrélations.
+
+## Clustering et évaluation en utilisant les étiquettes connues, i.e. évaluation externe/extrinsèque
+
+En utilisant les fonctions suivantes : 
+```
+from sklearn.cluster import KMeans
+from sklearn.metrics.cluster import adjusted_rand_score
+import matplotlib.pyplot as plt
+```
+Faire le clustering des données Iris en utilisant l'agorithme des k-moyennes et en faisant varier le nombre de clusters *k* entre 2 et 10. Pour chaque *k*, calculer l'adjusted rand score (version revue du Rand Index vue en cours, à maximiser). Faire un plot du rand index en fonction de *k* (scatter plot), et observer les résultats.
+
+
+## Clustering et évaluation sans utiliser les étiquettes, i.e. évaluation interne/intrinséque : seulement avec la structure interne des clusters
+
+Suivre la même procédure qu'à la question précédente, mais utiliser les critères internes de Davies-Bouldin (à minimiser) et de Calinski Harabasz (à maximiser) dans *sklearn.metrics*. Quels sont les résultats obtenus ?
+
+## Visualisation en deux dimensions (réduction de dimensions par PCA) des clusters et de leurs centres
+
+Faire un clustering avec les k-means en utilisant 3 clusters.
+En utilisant l'ACP, qui est une technique de réduction de dimensions, réduire les données (initialement décrites par 4 attributs) pour les représenter sur 2 dimensions afin de pouvoir visualiser le résultat du clustering. 
+`from sklearn.decomposition import PCA`
+Pour cela, faire un scatter plot des données réduites par ACP (fit and transform) et définisser la couleur de chaque point en fonction du cluster obtenu par la méthodes des k-moyennes.
+
+Ensuite, ajouter pour chaque cluster son centre en noir afin de les visualiser.
+
+## Étiquetage
+
+Afin de visualiser quelles sont les attributs les plus descriptifs, et les plus typiques des clusters, implémenter la feature precision, le feature recall et la feature f-mesure et calculer ces valeurs pour chaque cluster et chaque attribut.
+
+Avant de procédure, et afin d'éviter un effet d'échelle, procéder à un rescaling des données : `from sklearn.preprocessing import MinMaxScaler`
+
+Pour calculer ces valeurs, la fonction *numpy.sum* qui permet de calculer la somme des colonnes, des lignes, ou de la totalité des données d'une matrice vous sera utile. De même, il est possible de filtrer la matrice *X* des données en fonction de la classe *k* du vecteur de classes *y* en utilisant `X[y == k]`.
+
+
 # TD - Word embeddings pour le résumé automatique
 
 ## Embeddings pré-appris
