@@ -65,7 +65,7 @@ Ensuite, ajouter pour chaque cluster son centre en noir afin de les visualiser.
 
 Afin de visualiser quelles sont les attributs les plus descriptifs, et les plus typiques des clusters, implémenter la feature precision, le feature recall et la feature f-mesure et calculer ces valeurs pour chaque cluster et chaque attribut.
 
-Avant de procédure, et afin d'éviter un effet d'échelle, procéder à un rescaling des données : `from sklearn.preprocessing import MinMaxScaler`
+Afin d'éviter un effet d'échelle, procéder à un rescaling des données : `from sklearn.preprocessing import MinMaxScaler`
 
 Pour calculer ces valeurs, la fonction *numpy.sum* qui permet de calculer la somme des colonnes, des lignes, ou de la totalité des données d'une matrice vous sera utile. De même, il est possible de filtrer la matrice *X* des données en fonction de la classe *k* du vecteur de classes *y* en utilisant `X[y == k]`.
 
